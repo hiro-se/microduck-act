@@ -1,0 +1,25 @@
+[project]
+name = "microduck-act"
+version = "0.1.0"
+description = "Keyboard demonstrations and LeRobot ACT for Microduck in MuJoCo"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = "Apache-2.0"
+dependencies = [
+    "numpy>=2.0,<3",
+    "mujoco==3.10.0",
+    "onnxruntime>=1.24.4",
+    "pillow>=11",
+    "better-actuator-models",
+]
+
+[tool.uv]
+package = false
+override-dependencies = [
+    "protobuf>=4.0,<7.0",
+    "onnx>=1.20.1",
+    "zmq ; python_version < '3.0'",
+]
+
+[tool.uv.sources]
+better-actuator-models = { git = "https://github.com/Rhoban/bam.git", rev = "62bd8ce12154340be97e06f7f41a0ca8f116d967" }
